@@ -1,0 +1,14 @@
+{
+    "name": "lrcampos97/ebanx_challenge",
+    "description": "Package from API project with PHP.",
+    "authors": [
+        {
+            "name": "Luiz Felipe Campos"
+        }
+    ],
+    "require": {    	
+    	"slim/slim": "^3.12"
+    },
+    "autoload": {
+    }
+}
