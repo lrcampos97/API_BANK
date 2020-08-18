@@ -2,8 +2,8 @@
 
 class Account {
 
-    private $id;
-    private $balance;
+    public $id;
+    public $balance;
     
     public  function __construct($id, $amount){
         
@@ -22,9 +22,25 @@ class Account {
         $this->id = $value;
     }
 
-    public function setbalance($value){
+    public function setbalance($value, $type){
         if ($value > 0 ){
-            $this->balance += $value;
+            switch ($type) {
+                case 'deposit':
+
+                    $this->balance += $value;
+                    break;   
+
+                case 'withdraw': 
+                    
+                    if (($this->balance - $value) >= 0 ){
+                        $this->balance -= $value;
+                    } else {
+                        $this->balance = 0;
+                    }                     
+
+                    break;
+            }
+            
         }    
     }
 
@@ -37,7 +53,7 @@ class Account {
     }    
 
     public function getObjectJSON() {        
-        return json_encode(get_object_vars($this),JSON_FORCE_OBJECT);
+        return json_encode(get_object_vars($this),JSON_FORCE_OBJECT);         
     }
 
 }

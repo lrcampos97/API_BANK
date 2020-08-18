@@ -1,7 +1,5 @@
 <?php
 
-session_start(); // iniciar uma sessão
-
 use \Psr\Http\Message\ServerRequestInterface as Request;
 use \Psr\Http\Message\ResponseInterface as Response;
 
